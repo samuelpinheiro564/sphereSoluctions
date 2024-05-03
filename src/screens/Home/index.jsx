@@ -3,7 +3,7 @@ import { TouchableOpacity, View ,Image} from "react-native";
 export default function Home() {
     return (
       <View style={styles.container}>
-        <Image source={require('../../../assets/imagefundo.png')} style={styles.backroundimage}/>
+        <Image source={require('../../../assets/image.png')} style={styles.backroundimage}/>
         <Text style={styles.titulo1}>A </Text>
         <Text style={styles.titulo}>SUSTENTABILIDADE</Text>
         <Text style={styles.titulo}> NÃO É</Text>
