@@ -7,7 +7,7 @@ const PORT = 4000;
 const pool = new Pool({
   user: "postgres",
   host: "localhost",
-  database: "Emps",
+  database: "usuarios",
   password: "ds564",
   port: 7007,
 });
@@ -17,3 +17,6 @@ app.use(express.json());
 app.listen(PORT, () => {
   console.log(`funcionando normalmente ${PORT}🚀`);
 });
+
+
+
