@@ -1,10 +1,10 @@
-import {createBottonTabNavigator} from '@react-navigation/bottom-tabs';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { Feather } from '@expo/vector-icons';
 
 import Home from '../screens/Home';
-import Listamaquinas from '../screens/Listamaquinas';
-import SphereSoluctions from '../screens/SphereSoluctions';
 
-const Tab = createBottonTabNavigator();
+
+const Tab = createBottomTabNavigator();
 
 const TabRoutes = () => {
     return (
@@ -25,38 +25,8 @@ const TabRoutes = () => {
                 tabBarInactiveTintColor: '#36393f',
             }}
             />
-            <Tab.Screen
-            name="Listamaquinas"
-            component={Listamaquinas}
-            options={{
-                tabBarIcon: ({focused}) => (
-                    <Feather
-                    name="list"
-                    size={24}
-                    color={focused ? '#FFD700' : '#36393f'}
-                    />
-                ),
-                tabBarLabel: 'Listamaquinas',
-                tabBarActiveTintColor: '#FFD700',
-                tabBarInactiveTintColor: '#36393f',
-            }}
-            />
-            <Tab.Screen
-            name="SphereSoluctions"
-            component={SphereSoluctions}
-            options={{
-                tabBarIcon: ({focused}) => (
-                    <Feather
-                    name="settings"
-                    size={24}
-                    color={focused ? '#FFD700' : '#36393f'}
-                    />
-                ),
-                tabBarLabel: 'SphereSoluctions',
-                tabBarActiveTintColor: '#FFD700',
-                tabBarInactiveTintColor: '#36393f',
-            }}
-            />
+          
+          
            
         </Tab.Navigator>
     );

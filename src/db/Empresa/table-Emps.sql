@@ -1,13 +1,14 @@
 CREATE TABLE Emps (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    id SERIAL PRIMARY KEY,
     nome VARCHAR(150) NOT NULL,
     email VARCHAR(150) NOT NULL,
     cep VARCHAR(150) NOT NULL,
     cnpj VARCHAR(150) NOT NULL,
-    id_planta INTEGER NOT NULL,
-    FOREIGN KEY (id_planta) REFERENCES Plantas(id),
+    senha VARCHAR(150) NOT NULL,
 id_maquina INTEGER NOT NULL ,
     FOREIGN KEY (id_maquina) REFERENCES Maquinas(id)
 );
-INSERT INTO Emps (nome, email, cep, cnpj, id_planta, id_maquina)
-VALUES ('Empresa 1', 'empresa1@gmail.com', 12345678, 12345678901234, 1, 1);
+INSERT INTO Emps (nome, email, cep, cnpj, senha, id_maquina) VALUES ('Nome 1', 'Email 1', 'Cep 1', 'Cnpj 1', 'Senha 1', 1);
+
+
+

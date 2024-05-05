@@ -1,5 +1,5 @@
 CREATE TABLE Maquinas (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    id SERIAL PRIMARY KEY,
     marca VARCHAR(150) NOT NULL,
     modelo VARCHAR(150) NOT NULL,
     funcao VARCHAR(150) NOT NULL,
@@ -7,9 +7,6 @@ CREATE TABLE Maquinas (
     tipocombustivel VARCHAR(150) NOT NULL,
     quantidade INTEGER NOT NULL,
     usodiariohoras INTEGER NOT NULL,
-    dataAquisicao DATE NOT NULL,
-    id_planta INTEGER NOT NULL,
-    FOREIGN KEY (id_planta) REFERENCES Plantas(id)
+    dataAquisicao DATE NOT NULL
 );
-INSERT INTO Maquinas (nome, descricao, id_planta)
-VALUES ('Maquina 1', 'Maquina 1', 1);
+INSERT INTO Maquinas (marca, modelo, funcao, potencia, tipocombustivel, quantidade, usodiariohoras, dataAquisicao) VALUES ('Marca 1', 'Modelo 1', 'Funcao 1', 'Potencia 1', 'Tipo Combustivel 1', 1, 1, '2021-01-01');

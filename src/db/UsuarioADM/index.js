@@ -1,24 +1,24 @@
 const express = require("express");
 const { Pool } = require("pg");
 
-const app = express();
+const appUsuarioADM = express();
 const PORT = 4000;
 
 const pool = new Pool({
   user: "postgres",
   host: "localhost",
-  database: "usuarios",
+  database: "spheresoluctions",
   password: "ds564",
   port: 7007,
 });
 
-app.use(express.json());
+appUsuarioADM.use(express.json());
 
-app.listen(PORT, () => {
+appUsuarioADM.listen(PORT, () => {
   console.log(`funcionando normalmente ${PORT}🚀`);
 });
 
-app.get("/usuarios", async (req, res) => {
+appUsuarioADM.get("/usuarios", async (req, res) => {
     try {
       const response = await pool.query("SELECT * FROM usuarios");
       res.status(201).json({message:response.rows});
@@ -29,7 +29,7 @@ app.get("/usuarios", async (req, res) => {
 }
 );
 
-app.get("/usuarios/:id", async (req, res) => {
+appUsuarioADM.get("/usuarios/:id", async (req, res) => {
     try {
         const { id } = req.params;
 
@@ -49,7 +49,7 @@ app.get("/usuarios/:id", async (req, res) => {
     }
 });
 
-app.get("/usuarios/:email", async (req, res) => {
+appUsuarioADM.get("/usuarios/:email", async (req, res) => {
     try {
         const { email } = req.params;
 
@@ -70,7 +70,7 @@ app.get("/usuarios/:email", async (req, res) => {
 }
 );
 
-app.get("/usuarios/:senha", async (req, res) => {
+appUsuarioADM.get("/usuarios/:senha", async (req, res) => {
     try {
         const { senha } = req.params;
 
@@ -91,7 +91,7 @@ app.get("/usuarios/:senha", async (req, res) => {
 }
 );
 
-app.get("/usuarios/:nome", async (req, res) => {
+appUsuarioADM.get("/usuarios/:nome", async (req, res) => {
     try {
         const { nome } = req.params;
 
@@ -112,7 +112,7 @@ app.get("/usuarios/:nome", async (req, res) => {
 }
 );
 
-app.get("/usuarios/:id/:email", async (req, res) => {
+appUsuarioADM.get("/usuarios/:id/:email", async (req, res) => {
     try {
         const { id, email } = req.params;
 
@@ -133,7 +133,7 @@ app.get("/usuarios/:id/:email", async (req, res) => {
 }
 );
 
-app.get("/usuarios/:id/:senha", async (req, res) => {
+appUsuarioADM.get("/usuarios/:id/:senha", async (req, res) => {
     try {
         const { id, senha } = req.params;
 
@@ -154,7 +154,7 @@ app.get("/usuarios/:id/:senha", async (req, res) => {
 }
 );
 
-app.get("/usuarios/:id/:nome", async (req, res) => {
+appUsuarioADM.get("/usuarios/:id/:nome", async (req, res) => {
     try {
         const { id, nome } = req.params;
 
@@ -175,7 +175,7 @@ app.get("/usuarios/:id/:nome", async (req, res) => {
 }
 );
 
-app.get("/usuarios/:email/:senha", async (req, res) => {
+appUsuarioADM.get("/usuarios/:email/:senha", async (req, res) => {
     try {
         const { email, senha } = req.params;
 
@@ -196,7 +196,7 @@ app.get("/usuarios/:email/:senha", async (req, res) => {
 }
 );
 
-app.get("/usuarios/:email/:nome", async (req, res) => {
+appUsuarioADM.get("/usuarios/:email/:nome", async (req, res) => {
     try {
         const { email, nome } = req.params;
 
@@ -217,7 +217,7 @@ app.get("/usuarios/:email/:nome", async (req, res) => {
 }
 );
 
-app.get("/usuarios/:senha/:nome", async (req, res) => {
+appUsuarioADM.get("/usuarios/:senha/:nome", async (req, res) => {
     try {
         const { senha, nome } = req.params;
 
@@ -239,7 +239,7 @@ app.get("/usuarios/:senha/:nome", async (req, res) => {
 );
 
 
-app.post("/usuarios", async (req, res) => {
+appUsuarioADM.post("/usuarios", async (req, res) => {
     try {
         const { nome, email, senha } = req.body;
 
@@ -260,7 +260,7 @@ app.post("/usuarios", async (req, res) => {
 }
 );
 
-app.put("/usuarios/:id", async (req, res) => {
+appUsuarioADM.put("/usuarios/:id", async (req, res) => {
     try {
         const { id } = req.params;
         const { nome, email, senha } = req.body;
@@ -282,7 +282,7 @@ app.put("/usuarios/:id", async (req, res) => {
 }
 );
 
-app.delete("/usuarios/:id", async (req, res) => {
+appUsuarioADM.delete("/usuarios/:id", async (req, res) => {
     try {
         const { id } = req.params;
 

@@ -1,24 +1,24 @@
 const express = require("express");
 const { Pool } = require("pg");
 
-const app = express();
+const appEmpresa = express();
 const PORT = 4000;
 
 const pool = new Pool({
   user: "postgres",
   host: "localhost",
-  database: "Emps",
+  database: "spheresoluctions",
   password: "ds564",
   port: 7007,
 });
 
-app.use(express.json());
+appEmpresa.use(express.json());
 
-app.listen(PORT, () => {
+appEmpresa.listen(PORT, () => {
   console.log(`funcionando normalmente ${PORT}🚀`);
 });
 
-app.get("/Emps", async (req, res) => {
+appEmpresa.get("/Emps", async (req, res) => {
     try {
       const response = await pool.query("SELECT * FROM Emps");
       res.status(201).json({message:response.rows});
@@ -29,7 +29,7 @@ app.get("/Emps", async (req, res) => {
 }
 );
 
-app.get("/Emps/:id", async (req, res) => {
+appEmpresa.get("/Emps/:id", async (req, res) => {
     try {
         const { id } = req.params;
 
@@ -50,7 +50,7 @@ app.get("/Emps/:id", async (req, res) => {
 }
 );
 
-app.get("/Emps/:id_empresa/:estrelas", async (req, res) => {
+appEmpresa.get("/Emps/:id_empresa/:estrelas", async (req, res) => {
     try {
         const { id_empresa, estrelas } = req.params;
 
@@ -73,7 +73,7 @@ app.get("/Emps/:id_empresa/:estrelas", async (req, res) => {
 );
 // Iniciar o servidor
 
-app.get("/Emps/:id_empresa/:estrelas", async (req, res) => {
+appEmpresa.get("/Emps/:id_empresa/:estrelas", async (req, res) => {
     try {
         const { id_empresa, estrelas } = req.params;
 
@@ -95,7 +95,7 @@ app.get("/Emps/:id_empresa/:estrelas", async (req, res) => {
 }
 );
 
-app.get("/Emps/id_empresa/:id_empresa", async (req, res) => {
+appEmpresa.get("/Emps/id_empresa/:id_empresa", async (req, res) => {
     try {
         const { id_empresa } = req.params;
 
@@ -117,7 +117,7 @@ app.get("/Emps/id_empresa/:id_empresa", async (req, res) => {
 }
 );
 
-app.get("/Emps/nome/:nome", async (req, res) => {
+appEmpresa.get("/Emps/nome/:nome", async (req, res) => {
     try {
         const { nome } = req.params;
 
@@ -139,7 +139,7 @@ app.get("/Emps/nome/:nome", async (req, res) => {
 }
 );
 
-app.get("/Emps/cnpj/:cnpj", async (req, res) => {
+appEmpresa.get("/Emps/cnpj/:cnpj", async (req, res) => {
     try {
         const { cnpj } = req.params;
 
@@ -161,7 +161,7 @@ app.get("/Emps/cnpj/:cnpj", async (req, res) => {
 }
 );
 
-app.get("/Emps/endereco/:endereco", async (req, res) => {
+appEmpresa.get("/Emps/endereco/:endereco", async (req, res) => {
     try {
         const { endereco } = req.params;
 
@@ -183,7 +183,7 @@ app.get("/Emps/endereco/:endereco", async (req, res) => {
 }
 );
 
-app.get("/Emps/telefone/:telefone", async (req, res) => {
+appEmpresa.get("/Emps/telefone/:telefone", async (req, res) => {
     try {
         const { telefone } = req.params;
 
@@ -205,7 +205,7 @@ app.get("/Emps/telefone/:telefone", async (req, res) => {
 }
 );
 
-app.get("/Emps/email/:email", async (req, res) => {
+appEmpresa.get("/Emps/email/:email", async (req, res) => {
     try {
         const { email } = req.params;
 
@@ -227,7 +227,7 @@ app.get("/Emps/email/:email", async (req, res) => {
 }
 );
 
-app.get("/Emps/telefone/:telefone", async (req, res) => {
+appEmpresa.get("/Emps/telefone/:telefone", async (req, res) => {
     try {
         const { telefone } = req.params;
 
@@ -249,7 +249,7 @@ app.get("/Emps/telefone/:telefone", async (req, res) => {
 }
 );
 
-app.get("/Emps/email/:email", async (req, res) => {
+appEmpresa.get("/Emps/email/:email", async (req, res) => {
     try {
         const { email } = req.params;
 
@@ -271,7 +271,7 @@ app.get("/Emps/email/:email", async (req, res) => {
 }
 );
 
-app.get("/Emps/telefone/:telefone", async (req, res) => {
+appEmpresa.get("/Emps/telefone/:telefone", async (req, res) => {
     try {
         const { telefone } = req.params;
 
@@ -293,7 +293,7 @@ app.get("/Emps/telefone/:telefone", async (req, res) => {
 }
 );
 
-app.get("/Emps/email/:email", async (req, res) => {
+appEmpresa.get("/Emps/email/:email", async (req, res) => {
     try {
         const { email } = req.params;
 
@@ -316,7 +316,7 @@ app.get("/Emps/email/:email", async (req, res) => {
 );
 
 
-app.post("/Emps", async (req, res) => {
+appEmpresa.post("/Emps", async (req, res) => {
     try {
         const { nome, cnpj, endereco, telefone, email } = req.body;
 
@@ -340,7 +340,7 @@ app.post("/Emps", async (req, res) => {
 }
 );
 
-app.put("/Emps/:id", async (req, res) => {
+appEmpresa.put("/Emps/:id", async (req, res) => {
     try {
         const { id } = req.params;
         const { nome, cnpj, endereco, telefone, email } = req.body;
@@ -365,7 +365,7 @@ app.put("/Emps/:id", async (req, res) => {
 }
 );
 
-app.delete("/Emps/:id", async (req, res) => {
+appEmpresa.delete("/Emps/:id", async (req, res) => {
     try {
         const { id } = req.params;
 

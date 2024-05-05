@@ -1,69 +1,71 @@
 import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#36393f",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  titulo1: {
-    color: "#FFD700",
-    fontSize: 30,
-    fontWeight: "bold",
-    marginTop: 20,
-    marginBottom: 20,
-  },
   titulo: {
-    color: "#FFD700",
-    fontSize: 25,
+    fontSize: 40,
+    marginLeft: 20,
+    marginTop: 10,
     fontWeight: "bold",
+  },
+  ultimoTitulo: {
+    fontSize: 40,
+    marginLeft: 20,
+    marginTop: 10,
     marginBottom: 20,
-  },
-  backgroundimage: {
-    flex: 1,
-    width: "100%",
-    height: "100%",
-    justifyContent: "center",
-    alignItems: "center",
-    position: "absolute",
-    opacity: 0.5,
-    resizeMode: "cover",
-    width: 200, // Largura desejada da imagem
-    height: 200, // Altura desejada da imagem
-    position: "absolute",
-    top: 50, // Posição superior
-    left: 50, // Posição esquerda
-    // Você pode ajustar top, bottom, left ou right conforme necessário para posicionar a imagem
-  },
-  titulo2: {
-    color: "#FFD700",
-    fontSize: 25,
     fontWeight: "bold",
-    marginBottom: 20,
+  },
+  botao: {
+    marginTop: 20,
+    padding: 10,
+    width: "60%",
+    backgroundColor: "#1c252b",
+    borderRadius: 20,
+    marginLeft: 20,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    paddingHorizontal: 30,
+    shadowColor: "#1ED27C",
+    shadowOffset: {
+      width: 6,
+      height: 6,
+    },
+    shadowOpacity: 1,
+    shadowRadius: 3.84,
+    elevation: 5,
   },
   subtitulo: {
-    color: "#FFD700",
+    fontSize: 30,
+    marginLeft: 20,
+    marginTop: 40,
+    marginBottom: 10,
+    textAlign: "left",
+  },
+  subtema: {
+    fontSize: 22,
+    margin: 20,
+    marginTop: 20,
+    marginBottom: 10,
+    textAlign: "right",
+  },
+  textobotao: {
+    color: "#fff",
+    textAlign: "left",
     fontSize: 20,
-    fontWeight: "bold",
-    textAlign: "center",
+    marginRight: 2,
   },
-  tema: {
-    color: "#FFD700",
-    fontSize: 18,
-    fontWeight: "bold",
-    textAlign: "center",
+  imga: {
+    width: 300,
+    height: 250,
+    marginTop: 50,
   },
-  button: {
-    backgroundColor: "#FFD700",
-    padding: 10,
-    borderRadius: 7,
-    marginTop: 20,
-  },
-  imagem: {
-    width: 200,
-    height: 200,
-    marginTop: 20,
+  gradient: {
+    position: "absolute",
+    top: -200,
+    left: 100,
+    right: 0,
+    height: "100%",
+    width: "100%",
   },
 });
+
 export default styles;
