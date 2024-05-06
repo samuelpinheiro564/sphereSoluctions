@@ -1,48 +1,54 @@
-import { StyleSheet } from "react-native";
-
+import { StyleSheet } from 'react-native';
 const styles = StyleSheet.create({
+    containerPai: {
+      flex: 1,
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+    horizontal: {
+      flexDirection: 'row',
+    },
     container: {
-        flex: 1,
-        backgroundColor: "#fff",
-        alignItems: "center",
-        justifyContent: "center",
+      flex: 1,
+      alignItems: 'center',
+      justifyContent: 'center',
+      paddingHorizontal: 10,
     },
     titulo: {
-        fontSize: 24,
-        fontWeight: "bold",
-        color: "#000",
-    },
-    subtitulo: {
-        fontSize: 16,
-        color: "#000",
+      fontSize: 20,
+      fontWeight: 'bold',
+      marginBottom: 10,
     },
     button: {
-        backgroundColor: "#fff",
-        padding: 10,
-        borderRadius: 5,
-        margin: 10,
+      backgroundColor: "#fff",
+      padding: 10,
+      borderRadius: 5,
+      margin: 10,
     },
     perfil: {
-        padding: 10,
-        borderRadius: 5,
-        margin: 10,
-        alignItems: "center",
-        justifyContent: "center",
+      padding: 10,
+      borderRadius: 5,
+      alignItems: "center",
+      justifyContent: "center",
     },
     imagem: {
-        width: 100,
-        height: 100,
-        borderRadius: 20,
+      width: 100,
+      height: 100,
+      borderRadius: 20,
+    },
+    subtitulo: {
+      fontSize: 16,
+      fontWeight: 'bold',
+      marginTop: 20,
     },
     missaoCont: {
-        padding: 10,
-        borderRadius: 5,
-        margin: 10,
-        boxShadow: "0px 0px 5px 0px #000",
+      padding: 10,
+      borderRadius: 5,
+      margin: 10,
+      boxShadow: "0px 0px 5px 0px #000",
     },
     texto: {
-        fontSize: 16,
-        color: "#000",
+      fontSize: 16,
+      color: "#000",
     },
-    });
-    export default styles;
+  });

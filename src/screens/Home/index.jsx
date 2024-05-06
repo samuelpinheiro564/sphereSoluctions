@@ -4,6 +4,7 @@ import React from "react";
 import { LinearGradient } from "expo-linear-gradient"; // Importe LinearGradient do pacote expo-linear-gradient
 import styles from "./styles";
 
+
 export default function Home() {
   return (
     <ScrollView>
